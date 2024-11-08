@@ -1,0 +1,98 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.categorias-container {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.header {
+  background-color: #276B46;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.pesquisa {
+  margin: 20px 0;
+  color: #38a03e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pesquisa label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.pesquisa input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 30%;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  height: 120px;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-content h2 {
+  font-size: 1.2em;
+  margin: 0;
+  color: #276B46;
+}
+
+.card-content p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+svg {
+  fill: #276B46;
+  cursor: pointer;
+}
+
+svg:hover {
+  fill: #276B46;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}

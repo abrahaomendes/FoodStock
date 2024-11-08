@@ -1,0 +1,15 @@
+<div class="container-alterar-senha">
+  <h1 class="header">Nova Senha</h1>
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="alterarSenha(f)">
+    <div class="form-group">
+      <label>Senha</label>
+      <input type="password" [(ngModel)]="senha" name="senha" required/>
+    </div>
+    <div class="form-group">
+      <label>Repetir Senha</label>
+      <input type="password" [(ngModel)]="repetirSenha" name="repetirSenha" required/>
+    </div>
+    <button type="submit">Salvar</button>
+    <a [routerLink]="['/login']">Login</a>
+  </form>
+</div>

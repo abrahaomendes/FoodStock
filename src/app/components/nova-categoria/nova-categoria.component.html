@@ -1,0 +1,25 @@
+<div class="container-produto">
+  <h1 class="header">Nova Categoria</h1>
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="createCategory(f)">
+    <div class="form-group nome">
+      <label>Nome</label>
+      <input type="text" [(ngModel)]="categoria.nome" name="nome"/>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Descrição</label>
+        <input type="text" [(ngModel)]="categoria.descricao" name="marca"/>
+      </div>
+
+      <div class="form-group">
+        <label>Imagem</label>
+        <input type="text"  [(ngModel)]="categoria.imgUrl" name="img"/>
+      </div>
+    </div>
+
+    <button type="submit">Salvar</button>
+    <button type="reset">Novo</button>
+    <a [routerLink]="['/categoria']">Retornar</a>
+  </form>
+</div>

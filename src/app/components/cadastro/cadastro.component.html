@@ -1,0 +1,25 @@
+<div class="login-container">
+  <div class="login-panel">
+    <h2 class="title">Bem-vindo de volta!</h2>
+    <button class="login-button" [routerLink]="['/login']">Entrar</button>
+  </div>
+  <div class="signup-panel">
+    <h1>Criar Conta</h1>
+    <p>Preencha os dados</p>
+    <form #f="ngForm" (ngSubmit)="cadastrar(f)">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" [(ngModel)]="usuario.name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="usuario.email" required>
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" [(ngModel)]="usuario.password" required>
+      </div>
+      <button type="submit" class="signup-button">Cadastre-se</button>
+    </form>
+  </div>
+</div>

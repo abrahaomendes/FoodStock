@@ -1,0 +1,57 @@
+<div class="container-produto">
+  <h1 class="header">Novo Produto</h1>
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="createProduct(f)">
+    <div class="form-group nome">
+      <label>Nome</label>
+      <input type="text" [(ngModel)]="produto.nome" name="nome" required/>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Marca</label>
+        <input type="text" [(ngModel)]="produto.marca" name="marca"/>
+      </div>
+
+      <div class="form-group">
+        <label>Preço</label>
+        <input type="text" [(ngModel)]="produto.preco" name="preco"/>
+      </div>
+      <div class="form-group">
+        <label>Validade</label>
+        <input type="text" [(ngModel)]="produto.validade" name="validade"/>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Quantidade</label>
+        <input type="text"  [(ngModel)]="produto.quantidade" name="quantidade"/>
+      </div>
+      <div class="form-group">
+        <label for="unidade">Unidade</label>
+        <select name="unidade" id="unidade" [(ngModel)]="produto.unidade">
+          <option value=""></option>
+          <option value="Unidade">Unidade</option>
+          <option value="Kilo">Kilo</option>
+          <option value="Litro">Litro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Categoria</label>
+        <select [(ngModel)]="categoriaSelecionada" name="categoria" required>
+          <option *ngFor="let categoria of categorias" [ngValue]="categoria">{{categoria.nome}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Descrição</label>
+      <input type="text" name="descricao" [(ngModel)]="produto.descricao" maxlength="255"/>
+    </div>
+
+    <button type="submit">Salvar</button>
+    <button type="reset">Novo</button>
+    <a [routerLink]="['/despensa']">Retornar</a>
+  </form>
+</div>

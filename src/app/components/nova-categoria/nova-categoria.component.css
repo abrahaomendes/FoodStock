@@ -1,0 +1,101 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container-produto {
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.header {
+  background-color: #276B46;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-right: 10px;
+  display: block;
+  color: #276B46;
+}
+
+.form-group input, .form-group select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-row {
+  display: flex;
+  margin: 0;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.form-row .form-group:last-child {
+  margin-right: 0;
+}
+
+.nome {
+  margin-bottom: 0;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: #276B46;
+  outline: none;
+}
+
+button {
+  background-color: #276b46b2;
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+button:hover {
+  background-color: #276B46;
+}
+
+/* Estilos para o input file */
+.custom-file-upload {
+  display: inline-block;
+  padding: 0.325rem; /* Reduzido o padding */
+  cursor: pointer;
+  background-color: #276b46b2;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 14px; /* Ajuste do tamanho da fonte */
+}
+.form-group2 label{
+  color: #fff;
+}
+
+.custom-file-upload:hover {
+  background-color: #276B46;
+}
+
+input[type="file"] {
+  display: none;
+}

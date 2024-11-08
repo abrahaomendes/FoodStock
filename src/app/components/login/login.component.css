@@ -1,0 +1,88 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+.cadastre-se{
+  margin-left: 1rem;
+}
+.title{
+  font-family: "Crimson Text", serif;
+  font-weight: 600;
+  font-size: 30pt;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+.recuperar{
+  font-size: 9pt;
+  cursor: pointer;
+}
+
+.login-panel {
+  background-color: #276B46;
+  color: white;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.signup-panel {
+  background-color: white;
+  color: #276B46;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-panel h2, .signup-panel h1, .signup-panel h2 {
+  margin: 10px 0;
+}
+
+.login-button, .signup-button {
+  background-color: white;
+  color: #276B46;
+  border: 2px solid #276B46;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.login-button:hover, .signup-button:hover {
+  background-color: #276B46;
+  color: white;
+}
+
+.form-group {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #276B46;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.signup-panel form {
+  width: 80%;
+  max-width: 400px;
+}

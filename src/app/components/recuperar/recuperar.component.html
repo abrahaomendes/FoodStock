@@ -1,0 +1,17 @@
+<div class="login-container">
+  <div class="login-panel">
+    <h2 class="title">Esqueceu sua senha?</h2>
+  </div>
+  <div class="signup-panel">
+    <h1>Recuperar Senha</h1>
+    <p>Preencha os campos</p>
+    <form #f="ngForm" (ngSubmit)="enviar(f)">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="email" id="email" name="email" required>
+      </div>
+      <button type="submit" class="signup-button">Enviar</button>
+      <a class="retornar" [routerLink]="['/login']">Retornar</a>
+    </form>
+  </div>
+</div>

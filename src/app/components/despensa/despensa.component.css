@@ -1,0 +1,143 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+.estoque-container {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.header {
+  background-color: #276B46;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.pesquisa {
+  margin: 20px 0;
+  color: #276B46;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.svg{
+  cursor: pointer;
+}
+
+.pesquisa label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.pesquisa input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 30%;
+}
+
+.paginacao ::ng-deep .ngx-pagination .current {
+  background-color: #276B46;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #276B46;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+img {
+  width: 50px;
+  height: auto;
+}
+
+button {
+  background-color: #276B46;
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #276B46;
+}
+
+svg {
+  fill: #276B46;
+}
+
+svg:hover {
+  fill: #276B46;
+}
+.svg{
+  cursor: pointer;
+}
+img{
+  width: 40px;
+  height: 30px;
+}
+.vencido {
+  color: red;
+}
+.prestes-a-vencer {
+  color: orange;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #276B46;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px; /* Arredondamento leve */
+  padding: 8px 12px; /* Ajuste o padding para um espaço adequado */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: normal; /* Permite que o texto envolva */
+  max-width: 400px; /* Aumenta a largura máxima do tooltip */
+  overflow: hidden; /* Esconde o conteúdo que excede a largura máxima */
+  text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo */
+  word-wrap: break-word; /* Permite que o texto quebre em várias linhas */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+

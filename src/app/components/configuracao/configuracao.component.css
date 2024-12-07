@@ -1,0 +1,59 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container-alterar-senha {
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+  }
+  
+  .header {
+    background-color: #276B46;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-right: 10px;
+    display: block;
+    color: #276B46;
+  }
+  
+  .form-group input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-group input:focus {
+    border-color: #276B46;
+    outline: none;
+  }
+  
+  button {
+    background-color: #276b46b2;
+    color: white;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+  }
+  
+  button:hover {
+    background-color: #276B46;
+  }
+  

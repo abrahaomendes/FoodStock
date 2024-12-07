@@ -27,4 +27,13 @@ export class ProdutoService {
       tap((res) => this.#setCreate.set(res))
     )
   }
+  public update$(id:number,produto:Produto):Observable<any>{
+    const token = localStorage.getItem('token');
+    var headers = new HttpHeaders({"Content-Type":"application/json",  'Authorization': `Bearer ${token}` })
+
+    return this.#http.put<any>(`${this.#url()}/${id}`, produto, {headers}).pipe(
+      shareReplay(),
+      tap((res) => this.#setCreate.set(res))
+    )
+  }
 }

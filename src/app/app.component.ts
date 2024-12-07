@@ -9,7 +9,7 @@ import { startWith } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DespensaComponent, NovoProdutoComponent, NavComponent],
+  imports: [RouterOutlet, NavComponent],
   template: `
     <!--  -->
     @if(exibirNavBar()){

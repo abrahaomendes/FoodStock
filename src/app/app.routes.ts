@@ -8,6 +8,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { RecuperarComponent } from './components/recuperar/recuperar.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { AlterarSenhaComponent } from './components/alterar-senha/alterar-senha.component';
+import { ConfiguracaoComponent } from './components/configuracao/configuracao.component';
 
 export const routes: Routes = [
   {path:"produto", component:NovoProdutoComponent},
@@ -19,6 +20,7 @@ export const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"cadastro", component:CadastroComponent},
   {path:"recuperar", component:RecuperarComponent},
+  {path:"configuracao", component:ConfiguracaoComponent},
   {path:"", component:LoginComponent},
   {path:"**", component:NotFoundComponent}
 ];

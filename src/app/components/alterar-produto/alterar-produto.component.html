@@ -1,0 +1,73 @@
+<div class="modal-header">
+  <h4 class="modal-title">Alterar Produto</h4>
+  <button type="button" class="close" aria-label="Close" (click)="onClose()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <form #produtoForm="ngForm" (ngSubmit)="onSave(produtoForm)">
+    <!-- Nome do Produto -->
+    <div class="form-group">
+      <label for="nome">Nome do Produto</label>
+      <input type="text" id="nome" class="form-control" [(ngModel)]="modalData.nome" name="nome" required />
+    </div>
+
+    <!-- Marca -->a
+    <div class="form-group">
+      <label for="marca">Marca</label>
+      <input type="text" id="marca" class="form-control" [(ngModel)]="modalData.marca" name="marca" required />
+    </div>
+
+    <!-- Preço -->
+    <div class="form-group">
+      <label for="preco">Preço</label>
+      <input type="number" id="preco" class="form-control" [(ngModel)]="modalData.preco" name="preco" required />
+    </div>
+
+    <!-- Descrição -->
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" class="form-control" [(ngModel)]="modalData.descricao" name="descricao" rows="4"></textarea>
+    </div>
+
+    <!-- Quantidade -->
+    <div class="form-group">
+      <label for="quantidade">Quantidade</label>
+      <input type="number" id="quantidade" class="form-control" [(ngModel)]="modalData.quantidade" name="quantidade" required />
+    </div>
+
+    <!-- Unidade -->
+    <div class="form-group">
+      <label for="unidade">Unidade</label>
+      <select id="unidade" class="form-control" [(ngModel)]="modalData.unidade" name="unidade" required>
+        <option *ngFor="let unidade of unidades" [value]="unidade">
+          {{ unidade }}
+        </option>
+      </select>
+    </div>
+    
+
+    <!-- Validade -->
+    <div class="form-group">
+      <label for="validade">Validade</label>
+      <input type="date" id="validade" class="form-control" [(ngModel)]="modalData.validade" name="validade"  required />
+    </div>
+
+    <!-- Categoria -->
+    <div class="form-group">
+      <label for="categoria">Categoria</label>
+      <select class="form-control" [(ngModel)]="modalData.categories[0].nome" name="categoria" required>
+        <option *ngFor="let categoria of categorias" [ngValue]="categoria.nome">{{categoria.nome}}</option>
+      </select>
+    </div>
+    
+    
+
+    <!-- Botões -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="onClose()">Cancelar</button>
+      <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    </div>
+  </form>
+</div>

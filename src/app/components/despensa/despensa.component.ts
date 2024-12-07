@@ -5,6 +5,8 @@ import { DespensaService } from '../despensa.service';
 import { Produto } from '../../model/Produto';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AlterarProdutoComponent } from '../alterar-produto/alterar-produto.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-despensa',
@@ -18,6 +20,7 @@ export class DespensaComponent implements OnInit {
   public items = signal<Array<Produto>>([]);
   public page:number=1;
   #despensaService = inject(DespensaService)
+  dialog=inject(MatDialog)
   public total:number=0;
   params:string='';
   array=[1,2,3,4,5]
@@ -96,5 +99,18 @@ export class DespensaComponent implements OnInit {
     if (targetDate <= tenDaysFromToday) return 'prestes-a-vencer';
     return '';
   }
+  openModal(dado:any) {
+    console.log(dado)
+    const dialogRef = this.dialog.open(AlterarProdutoComponent, {
+      width: '500px',  // Definindo a largura do modal
+      data: { data: { ...dado } }  // Passando os dados do produto para o modal
+    });
 
+    // Método que será chamado quando o modal for fechado
+    dialogRef.afterClosed().subscribe(result => {
+        this.carregarLista();
+      
+    });
+
+}
 }

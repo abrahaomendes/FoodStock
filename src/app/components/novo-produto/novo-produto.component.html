@@ -14,11 +14,11 @@
 
       <div class="form-group">
         <label>Preço</label>
-        <input type="text" [(ngModel)]="produto.preco" name="preco"/>
+        <input type="text" [(ngModel)]="produto.preco" name="preco" mask="separator.2" />
       </div>
       <div class="form-group">
         <label>Validade</label>
-        <input type="text" [(ngModel)]="produto.validade" name="validade"/>
+        <input type="date" [(ngModel)]="produto.validade" name="validade"/>
       </div>
     </div>
 
@@ -32,7 +32,7 @@
         <select name="unidade" id="unidade" [(ngModel)]="produto.unidade">
           <option value=""></option>
           <option value="Unidade">Unidade</option>
-          <option value="Kilo">Kilo</option>
+          <option value="Kg">Kg</option>
           <option value="Litro">Litro</option>
         </select>
       </div>

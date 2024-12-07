@@ -25,15 +25,36 @@ export class CategoriaService {
     return this.#http.get<any>(this.#url(), { headers });
   }
 
-  public insertCategory$(categoria:Categoria):Observable<Categoria>{
+  public insertCategory$(file:File,categoria:Categoria):Observable<Categoria>{
     const token = localStorage.getItem('token');
+
+    let formData = new FormData();
+    formData.append('categoria', JSON.stringify(categoria));
+    formData.append('file', file)
 
 
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.#http.post<Categoria>(this.#url(),categoria, { headers });
+    return this.#http.post<Categoria>(this.#url(), formData, {
+      headers,
+      responseType: 'json'
+    });
   }
+  public update$(id:number,file:File,categoria:Categoria):Observable<Categoria>{
+    const token = localStorage.getItem('token');
+
+    let formData = new FormData();
+    formData.append('categoria', JSON.stringify(categoria));
+    formData.append('file', file)
 
 
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.#http.put<Categoria>(`${this.#url()}/${id}`, formData, {
+      headers,
+      responseType: 'json'
+    });
+  }
 }

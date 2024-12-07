@@ -54,9 +54,11 @@ table {
 
 th, td {
   padding: 10px;
+
+}
+tr{
   border-bottom: 1px solid #ddd;
 }
-
 th {
   background-color: #276B46;
   color: white;
@@ -119,7 +121,7 @@ img{
   border-radius: 5px; /* Arredondamento leve */
   padding: 8px 12px; /* Ajuste o padding para um espaço adequado */
   position: absolute;
-  z-index: 1;
+  z-index: 999;
   bottom: 125%;
   left: 50%;
   transform: translateX(-50%);
@@ -130,6 +132,7 @@ img{
   overflow: hidden; /* Esconde o conteúdo que excede a largura máxima */
   text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo */
   word-wrap: break-word; /* Permite que o texto quebre em várias linhas */
+  box-sizing: border-box; 
 }
 
 .tooltip:hover .tooltiptext {

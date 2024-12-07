@@ -14,12 +14,11 @@
 
       <div class="form-group">
         <label>Imagem</label>
-        <input type="text"  [(ngModel)]="categoria.imgUrl" name="img"/>
+        <input type="file" (change)="onFileSelected($event)" name="img"/>
       </div>
     </div>
 
     <button type="submit">Salvar</button>
-    <button type="reset">Novo</button>
     <a [routerLink]="['/categoria']">Retornar</a>
   </form>
 </div>

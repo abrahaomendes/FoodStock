@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { Categoria } from '../../model/Categoria';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CategoriaService } from '../categoria.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nova-categoria',
@@ -14,15 +15,30 @@ import { CategoriaService } from '../categoria.service';
 export class NovaCategoriaComponent {
 
   categoria = new Categoria();
+  selectedFile!: File;
   #categoryService=inject(CategoriaService);
+  #toast = inject(ToastrService)
 
 
   createCategory(form:NgForm){
-    this.#categoryService.insertCategory$(this.categoria).subscribe({
+    if(this.selectedFile){
+      console.log('presente')
+    }
+    this.#categoryService.insertCategory$(this.selectedFile,this.categoria).subscribe({
       next:(next)=>{
-        console.log(next);
+        this.#toast.success('Categoria Salva!')
+        form.resetForm();
       }
     })
     }
+
+    onFileSelected(event: Event): void {
+      const input = event.target as HTMLInputElement;
+      if (input.files && input.files.length > 0) {
+        this.selectedFile = input.files[0];
+      }
+    }
+  
+  
 
 }

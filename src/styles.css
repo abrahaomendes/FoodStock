@@ -11,6 +11,7 @@ a{
   text-decoration: none;
   color: #276B46;
 }
+
 .toast-center-center {
   top: 50%;
   left: 50%;
@@ -201,3 +202,6 @@ button.toast-close-button {
   }
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -51,21 +51,28 @@ body {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 200px;
+  margin: 0;
+  padding: 1rem;
   text-align: left;
   overflow: hidden;
   cursor: pointer;
-  
+  display: flex;
+  flex-direction: column;
 }
 
 .card-img {
   width: 100%;
-  height: auto;
-  height: 120px;
-  box-sizing: border-box;
+  height: 150px;
+  object-fit: cover;  /* Isso garante que a imagem seja cortada para caber no espaço sem distorção */
+  border-radius: 4px;
 }
 
 .card-content {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Isso faz com que o conteúdo cresça e empurre as ações para o fundo */
 }
 
 .card-content h2 {
@@ -84,17 +91,43 @@ body {
   justify-content: center;
   gap: 10px;
   padding: 10px;
+  margin-top: auto;  /* Isso empurra os ícones para o fundo do card */
 }
 
 svg {
   fill: #276B46;
   cursor: pointer;
+  transition: fill 0.3s;
 }
 
 svg:hover {
-  fill: #276B46;
+  fill: #205739;
 }
-a{
+
+a {
   text-decoration: none;
   color: inherit;
+}
+
+.mat-dialog-container {
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card-actions svg {
+  cursor: pointer;
+  margin-right: 8px;
+  fill: #314D1C;
+}
+
+.card-actions svg:hover {
+  fill: #205739;
 }

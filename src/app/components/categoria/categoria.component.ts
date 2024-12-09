@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { Categoria } from '../../model/Categoria';
 import { MatDialog } from '@angular/material/dialog';
 import { AlterarCategoriaComponent } from '../alterar-categoria/alterar-categoria.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-categoria',
@@ -17,6 +18,7 @@ export class CategoriaComponent implements OnInit {
 
   #apiServiceCat=inject(CategoriaService);
   #router=inject(Router)
+  #toast=inject(ToastrService)
   dialog=inject(MatDialog)
   categorias:Array<Categoria>=[
   ]
@@ -36,7 +38,7 @@ export class CategoriaComponent implements OnInit {
   }
   openModal(dado:any) {
     const dialogRef = this.dialog.open(AlterarCategoriaComponent, {
-      width: '500px',  
+      width: '600px',  
       data: { data: { ...dado } }  
     });
 
@@ -44,5 +46,14 @@ export class CategoriaComponent implements OnInit {
         this.carregarCategorias();
       
     });
+  }
+  deleteCat(id:number){
+    this.#apiServiceCat.delete$(id)
+    .subscribe({
+      next:()=>{
+        this.#toast.success('Deletado com Sucesso!')
+        this.carregarCategorias();
+      }
+    })
   }
 }

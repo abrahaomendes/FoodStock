@@ -6,11 +6,15 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
 import { NgxMaskDirective } from 'ngx-mask';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
-    provideHttpClient(),provideAnimations(),provideToastr(),DatePipe,NgxMaskDirective
+    provideHttpClient(),provideAnimations(),provideToastr(),DatePipe,NgxMaskDirective, provideAnimationsAsync()
+    ,MatDialogModule,MatButtonModule
   ]
 };

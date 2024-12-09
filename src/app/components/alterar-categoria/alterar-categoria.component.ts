@@ -1,9 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, inject, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CategoriaService } from '../categoria.service';
-import { ToastrService } from 'ngx-toastr';
+
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-alterar-categoria',
@@ -16,12 +17,12 @@ export class AlterarCategoriaComponent implements OnInit{
 
   modalData: any;  
   selectedFile!: File;
+  #toast = inject(ToastrService)
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any, 
     private dialogRef: MatDialogRef<AlterarCategoriaComponent>,
     private serviceCat: CategoriaService,
-    private toast: ToastrService
   ) {
     this.modalData = { ...data.data };  
   }
@@ -44,7 +45,7 @@ export class AlterarCategoriaComponent implements OnInit{
   onSave(form:NgForm){
     const { id, ...modalDataWithoutId } = this.modalData;
     this.serviceCat.update$(this.modalData.id,this.selectedFile,modalDataWithoutId).subscribe({
-      next:(resp)=> this.toast.success('Categoria Atualizada!')
+      next:(resp)=> this.#toast.success('Categoria Atualizada!')
     })
 
   }

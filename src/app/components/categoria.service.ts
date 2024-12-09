@@ -57,4 +57,12 @@ export class CategoriaService {
       responseType: 'json'
     });
   }
+  public delete$(id:number):Observable<void>{
+    const token = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.#http.delete<void>(`${this.#url()}/${id}`,{headers})
+  }
 }

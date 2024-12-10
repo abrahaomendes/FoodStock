@@ -1,11 +1,14 @@
 <nav class="navbar" [class.expanded]="isExpanded">
   <a class="toggle-btn" (click)="toggleMenu()"><img src="menu.png" class="icon" alt=""></a>
   <ul>
-      <li><a routerLink="categoria"><img src="home.png" alt="Home Icon" class="icon"> <span class="menu-text">Home</span></a></li>
-      <li><a routerLink="despensa"><img src="groceries.png" alt="Despensa Icon" class="icon"> <span class="menu-text">Despensa</span></a></li>
-      <li><a routerLink="produto"><img src="edit.png" alt="Cadastro de Produto Icon" class="icon"> <span class="menu-text">Cadastro de Produto</span></a></li>
-      <li><a routerLink="cadastro-categoria"><img src="document.png" alt="Cadastro de Categorias Icon" class="icon"> <span class="menu-text">Categorias</span></a></li>
-      <li><a routerLink="configuracao"><img src="setting.png" alt="Settings Icon" class="icon"> <span class="menu-text">Configurações</span></a></li>
-      <li><a routerLink="/login" (click)="logout()"><img src="logout.png" alt="Settings Icon" class="icon"> <span class="menu-text">Sair</span></a></li>
+    <li><a routerLink="categoria"><img src="home.png" alt="Home Icon" class="icon"> <span class="menu-text">Home</span></a></li>
+    <li><a routerLink="despensa"><img src="groceries.png" alt="Despensa Icon" class="icon"> <span class="menu-text">Despensa</span></a></li>
+    <li><a routerLink="produto"><img src="edit.png" alt="Cadastro de Produto Icon" class="icon"> <span class="menu-text">Cadastro de Produto</span></a></li>
+    <li><a routerLink="cadastro-categoria"><img src="document.png" alt="Cadastro de Categorias Icon" class="icon"> <span class="menu-text">Categorias</span></a></li>
+    <li><a routerLink="configuracao"><img src="setting.png" alt="Settings Icon" class="icon"> <span class="menu-text">Configurações</span></a></li>
+    <li><a routerLink="/login" (click)="logout()"><img src="logout.png" alt="Settings Icon" class="icon"> <span class="menu-text">Sair</span></a></li>
   </ul>
 </nav>
+
+<!-- Botão flutuante -->
+<button class="floating-btn" (click)="toggleMenu()">&#9776;</button>

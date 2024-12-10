@@ -132,12 +132,60 @@ img{
   overflow: hidden; /* Esconde o conteúdo que excede a largura máxima */
   text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo */
   word-wrap: break-word; /* Permite que o texto quebre em várias linhas */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.tabela-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body, html {
+    padding: 0;
+    margin: auto;
+    letter-spacing: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tabela{
+    display: none;
+  }
+  .tabela-mobile {
+    display: block;
+  }
+  .icons{
+    display: flex;
+    flex-direction: column;
+  }
+  .tabela-mobile table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .tabela-mobile th, .tabela-mobile td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  .tabela-mobile th {
+    background-color: #276B46;
+    color: white;
+  }
+
+  .tabela-mobile td img {
+    width: 40px;
+    height: auto;
+    object-fit: cover;
+  }
 }
 
 

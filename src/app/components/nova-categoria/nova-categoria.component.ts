@@ -28,7 +28,7 @@ export class NovaCategoriaComponent {
       next:(next)=>{
         this.#toast.success('Categoria Salva!')
         form.resetForm();
-      }
+      },error:(err)=>this.#toast.error('Campos inválidos!')
     })
     }
 
@@ -38,7 +38,7 @@ export class NovaCategoriaComponent {
         this.selectedFile = input.files[0];
       }
     }
-  
-  
+
+
 
 }

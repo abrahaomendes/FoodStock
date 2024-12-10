@@ -130,10 +130,62 @@ button.btn-primary:hover {
   z-index: 1050; /* Garantir que o modal fique acima de outros elementos */
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
+
+@media (max-width: 768px) {
   .mat-dialog-container {
-    width: 90%; /* Largura do modal em telas pequenas */
-    max-height: 80vh; /* Ajustar a altura máxima do modal para não ultrapassar a tela */
+    width: 90%;
+    max-height: 80vh;
+    padding: 10px;
+  }
+
+  .modal-header {
+    padding: 10px 15px;
+  }
+
+  .modal-header h4 {
+    font-size: 1.1rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
   }
 }
+
+@media (max-width: 480px) {
+  .mat-dialog-container {
+    width: 95%;
+    max-height: 80vh;
+  }
+
+  .modal-header {
+    padding: 8px 12px;
+  }
+
+  .modal-header h4 {
+    font-size: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-control {
+    font-size: 0.85rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+

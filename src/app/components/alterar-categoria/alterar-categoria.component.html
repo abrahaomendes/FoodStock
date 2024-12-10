@@ -16,13 +16,13 @@
     <!-- Descrição -->
     <div class="form-group">
       <label for="marca">Descrição</label>
-      <input type="text" id="marca" class="form-control" [(ngModel)]="modalData.descricao" name="descricao" required />
+      <input type="text" id="marca" class="form-control" [(ngModel)]="modalData.descricao" name="descricao"/>
     </div>
 
     <!-- Imagem -->
     <div class="form-group">
       <label for="preco">Imagem</label>
-      <input type="file" id="preco" class="form-control" (change)="onFileSelected($event)" name="image" required />
+      <input type="file" id="preco" class="form-control" (change)="onFileSelected($event)" name="image" />
     </div>
 
     <!-- Botões -->

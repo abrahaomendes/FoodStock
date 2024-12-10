@@ -8,13 +8,13 @@
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .modal-header h4 {
     margin: 0;
     font-size: 1.25rem;
     font-weight: bold;
   }
-  
+
   .modal-header .close {
     background: transparent;
     border: none;
@@ -23,11 +23,11 @@
     cursor: pointer;
     transition: color 0.3s;
   }
-  
+
   .modal-header .close:hover {
     color: #333;
   }
-  
+
   /* Estilo para o corpo do modal */
   .modal-body {
     padding: 20px;
@@ -35,17 +35,17 @@
     max-height: 400px;
     overflow-y: auto;
   }
-  
+
   .form-group {
     margin-bottom: 15px;
   }
-  
+
   .form-group label {
     font-size: 1rem;
     color: #333;
     margin-bottom: 5px;
   }
-  
+
   .form-control {
     width: 100%;
     padding: 10px;
@@ -55,20 +55,20 @@
     box-sizing: border-box;
     transition: border-color 0.3s;
   }
-  
+
   .form-control:focus {
     border-color: #276B46;
     outline: none;
   }
-  
+
   textarea.form-control {
     resize: vertical;
   }
-  
+
   select.form-control {
     padding-right: 30px; /* Para dar espaço à seta do select */
   }
-  
+
   button {
     padding: 10px 15px;
     font-size: 1rem;
@@ -77,25 +77,25 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+
   button.btn-secondary {
     background-color: #6c757d;
     color: white;
   }
-  
+
   button.btn-secondary:hover {
     background-color: #5a6268;
   }
-  
+
   button.btn-primary {
     background-color: #276B46;
     color: white;
   }
-  
+
   button.btn-primary:hover {
     background-color: #205739;
   }
-  
+
   /* Estilo para o rodapé do modal */
   .modal-footer {
     display: flex;
@@ -104,15 +104,15 @@
     background-color: #f7f7f7;
     border-top: 1px solid #ddd;
   }
-  
+
   .modal-footer button {
     margin-left: 10px;
   }
-  
+
   .modal-footer button:first-child {
     margin-left: 0;
   }
-  
+
   /* Ajuste do Modal para centralização */
   .mat-dialog-container {
     max-width: 600px; /* Largura máxima do modal */
@@ -129,12 +129,55 @@
     overflow-y: auto; /* Habilitar rolagem caso o conteúdo seja maior que a altura máxima */
     z-index: 1050; /* Garantir que o modal fique acima de outros elementos */
   }
-  
-  /* Responsividade */
-  @media (max-width: 600px) {
+
+
+  @media (max-width: 480px) {
     .mat-dialog-container {
-      width: 90%; /* Largura do modal em telas pequenas */
-      max-height: 80vh; /* Ajustar a altura máxima do modal para não ultrapassar a tela */
+      width: 85%;
+      top: 5%;
+      transform: translate(-50%, 0);
+      max-height: 85vh;
+      border-radius: 4px;
+      padding: 10px;
+    }
+
+    .modal-header, .modal-footer {
+      padding: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .modal-header h4 {
+      font-size: 1rem;
+    }
+
+    .modal-header .close {
+      font-size: 1.25rem;
+    }
+
+    .modal-body {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+    .form-control {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+
+    button {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+    }
+
+    button.btn-secondary {
+      margin: 5px 0;
+    }
+
+    .modal-footer {
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
-  
+
+

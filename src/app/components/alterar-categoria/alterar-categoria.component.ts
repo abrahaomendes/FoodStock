@@ -15,16 +15,16 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AlterarCategoriaComponent implements OnInit{
 
-  modalData: any;  
+  modalData: any;
   selectedFile!: File;
   #toast = inject(ToastrService)
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any, 
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private dialogRef: MatDialogRef<AlterarCategoriaComponent>,
     private serviceCat: CategoriaService,
   ) {
-    this.modalData = { ...data.data };  
+    this.modalData = { ...data.data };
   }
   ngOnInit(): void {
 
@@ -33,7 +33,7 @@ export class AlterarCategoriaComponent implements OnInit{
 
   salvarProduto(form: NgForm) {
     if (form.valid) {
-      this.dialogRef.close(this.modalData); 
+      this.dialogRef.close(this.modalData);
     } else {
       console.log('Formulário inválido');
     }
@@ -43,11 +43,15 @@ export class AlterarCategoriaComponent implements OnInit{
     this.dialogRef.close();
   }
   onSave(form:NgForm){
-    const { id,imagem, ...modalDataWithoutId } = this.modalData;
-    this.serviceCat.update$(this.modalData.id,this.selectedFile,modalDataWithoutId).subscribe({
-      next:()=> this.#toast.success('Categoria Atualizada!'),
-      error:(err)=> this.#toast.error(err.error)
-    })
+    if(form.valid){
+      const { id,imagem, ...modalDataWithoutId } = this.modalData;
+      this.serviceCat.update$(this.modalData.id,this.selectedFile,modalDataWithoutId).subscribe({
+        next:()=> this.#toast.success('Categoria Atualizada!'),
+        error:(err)=> this.#toast.error(err.error)
+      })
+    }else{
+      this.#toast.error('Campos inválidos')
+    }
 
   }
   onFileSelected(event: Event): void {

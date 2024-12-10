@@ -9,23 +9,23 @@ body {
 .toggle-btn {
   margin-bottom: 1rem;
   cursor: pointer;
-
 }
 
 .navbar {
   background-color: #276B46;
   padding: 10px;
-  width: 60px; /* Largura inicial encolhida */
+  width: 30px;
   transition: width 0.3s;
   position: fixed;
-  top: 0; /* Coloca a navbar no topo */
+  top: 0;
+  left: 0;
   height: 100%;
-  overflow: hidden;
   z-index: 9999;
 }
 
 .navbar.expanded {
-  width: 200px; /* Largura expandida */
+  display: block;
+  width: 200px;
 }
 
 .navbar ul {
@@ -55,13 +55,62 @@ body {
   width: 24px;
   height: 24px;
   margin-right: 10px;
-  filter: invert(1); /* Torna os ícones brancos */
+  filter: invert(1);
 }
 
 .menu-text {
-  display: none; /* Esconde o texto do menu quando encolhido */
+  display: none;
 }
 
 .navbar.expanded .menu-text {
-  display: inline; /* Mostra o texto do menu quando expandido */
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    background-color: #276B46;
+    padding: 10px;
+    width: 30px;
+    transition: width 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+  }
+
+.menu-text {
+  display: none;
+}
+
+.navbar.expanded .menu-text {
+  display: none;
+}
+  .navbar.expanded {
+    display: block;
+    width: 30px;
+  }
+  .floating-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    background-color: #276B46;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .floating-btn:hover {
+    background-color: #205739;
+  }
 }

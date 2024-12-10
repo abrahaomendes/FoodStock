@@ -7,6 +7,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AlterarProdutoComponent } from '../alterar-produto/alterar-produto.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmeDialogComponent } from '../../core/confirme-dialog/confirme-dialog.component';
 
 @Component({
   selector: 'app-despensa',
@@ -81,13 +82,15 @@ export class DespensaComponent implements OnInit {
     })
   }
   delete(id:number){
-    console.log(id)
+    let dialogRef = this.dialog.open(ConfirmeDialogComponent);
+    dialogRef.afterClosed().subscribe((result:boolean)=>{
+    if(result){
     this.#despensaService.delete$(id).subscribe({
       next:(next)=>{
         console.log(next);
         this.carregarLista();
       }
-    })
+    })}})
   }
   isExpired(date: Date): string {
     const today = new Date();
@@ -109,7 +112,7 @@ export class DespensaComponent implements OnInit {
     // Método que será chamado quando o modal for fechado
     dialogRef.afterClosed().subscribe(result => {
         this.carregarLista();
-      
+
     });
 
 }

@@ -6,11 +6,12 @@ import { ToastrService } from 'ngx-toastr';
 import { Produto } from '../../model/Produto';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-novo-produto',
   standalone: true,
-  imports: [FormsModule, RouterLink,CommonModule],
+  imports: [FormsModule, RouterLink,CommonModule, NgxMaskDirective],
   templateUrl: './novo-produto.component.html',
   styleUrl: './novo-produto.component.css'
 })

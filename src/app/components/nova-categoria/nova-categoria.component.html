@@ -3,7 +3,7 @@
   <form #f="ngForm" autocomplete="off" (ngSubmit)="createCategory(f)">
     <div class="form-group nome">
       <label>Nome</label>
-      <input type="text" [(ngModel)]="categoria.nome" name="nome"/>
+      <input type="text" [(ngModel)]="categoria.nome" name="nome" required=""/>
     </div>
 
     <div class="form-row">
@@ -14,7 +14,7 @@
 
       <div class="form-group">
         <label>Imagem</label>
-        <input type="file" (change)="onFileSelected($event)" name="img"/>
+        <input type="file" (change)="onFileSelected($event)" name="img" required/>
       </div>
     </div>
 

@@ -6,6 +6,7 @@ import { Categoria } from '../../model/Categoria';
 import { MatDialog } from '@angular/material/dialog';
 import { AlterarCategoriaComponent } from '../alterar-categoria/alterar-categoria.component';
 import { ToastrService } from 'ngx-toastr';
+import { ConfirmeDialogComponent } from '../../core/confirme-dialog/confirme-dialog.component';
 
 @Component({
   selector: 'app-categoria',
@@ -38,22 +39,25 @@ export class CategoriaComponent implements OnInit {
   }
   openModal(dado:any) {
     const dialogRef = this.dialog.open(AlterarCategoriaComponent, {
-      width: '600px',  
-      data: { data: { ...dado } }  
+      width: '600px',
+      data: { data: { ...dado } }
     });
 
     dialogRef.afterClosed().subscribe(result => {
         this.carregarCategorias();
-      
+
     });
   }
   deleteCat(id:number){
+    let dialogRef = this.dialog.open(ConfirmeDialogComponent);
+    dialogRef.afterClosed().subscribe((result:boolean)=>{
+    if(result){
     this.#apiServiceCat.delete$(id)
     .subscribe({
       next:()=>{
         this.#toast.success('Deletado com Sucesso!')
         this.carregarCategorias();
-      }
+      },error:(err)=>this.#toast.info('Produtos Cadastrados na Categoria!')
     })
-  }
+  }})}
 }

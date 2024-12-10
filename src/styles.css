@@ -11,6 +11,10 @@ a{
   text-decoration: none;
   color: #276B46;
 }
+.container-produto form.ng-submitted input:required:invalid,
+.container-produto form.ng-submitted select:required:invalid {
+  border: 1px solid red;
+}
 
 .toast-center-center {
   top: 50%;

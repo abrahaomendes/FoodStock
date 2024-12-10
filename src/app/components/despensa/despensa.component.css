@@ -144,17 +144,48 @@ img{
   display: none;
 }
 
-@media (max-width: 768px) {
-  body, html {
-    padding: 0;
-    margin: auto;
-    letter-spacing: 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 828px) {
+  body,html{
+    width: 100px;
   }
+
+  .tabela{
+    display: none;
+  }
+  .tabela-mobile {
+    display: block;
+  }
+  .icons{
+    display: flex;
+    flex-direction: column;
+  }
+  .tabela-mobile table {
+    border-collapse: collapse;
+  }
+
+  .tabela-mobile th, .tabela-mobile td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  .tabela-mobile th {
+    background-color: #276B46;
+    color: white;
+  }
+
+  .tabela-mobile td img {
+    width: 40px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    width: 105%;
+  }
+
   .tabela{
     display: none;
   }
@@ -187,7 +218,6 @@ img{
     object-fit: cover;
   }
 }
-
 
 
 

@@ -93,8 +93,8 @@ body {
   }
   .floating-btn {
     position: fixed;
-    bottom: 80px;
-    right: 40px;
+    bottom: 60px;
+    right: 30px;
     background-color: #276B46;
     color: #fff;
     border-radius: 50%;

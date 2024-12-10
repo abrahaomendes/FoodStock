@@ -43,9 +43,10 @@ export class AlterarCategoriaComponent implements OnInit{
     this.dialogRef.close();
   }
   onSave(form:NgForm){
-    const { id, ...modalDataWithoutId } = this.modalData;
+    const { id,imagem, ...modalDataWithoutId } = this.modalData;
     this.serviceCat.update$(this.modalData.id,this.selectedFile,modalDataWithoutId).subscribe({
-      next:(resp)=> this.#toast.success('Categoria Atualizada!')
+      next:()=> this.#toast.success('Categoria Atualizada!'),
+      error:(err)=> this.#toast.error(err.error)
     })
 
   }

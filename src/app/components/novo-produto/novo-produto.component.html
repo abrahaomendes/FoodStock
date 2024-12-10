@@ -25,7 +25,7 @@
     <div class="form-row">
       <div class="form-group">
         <label>Quantidade</label>
-        <input type="text"  [(ngModel)]="produto.quantidade" name="quantidade"/>
+        <input type="number"  [(ngModel)]="produto.quantidade" min="0" name="quantidade"/>
       </div>
       <div class="form-group">
         <label for="unidade">Unidade</label>
@@ -51,7 +51,6 @@
     </div>
 
     <button type="submit">Salvar</button>
-    <button type="reset">Novo</button>
     <a [routerLink]="['/despensa']">Retornar</a>
   </form>
 </div>

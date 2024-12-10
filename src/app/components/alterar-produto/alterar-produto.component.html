@@ -13,7 +13,7 @@
       <input type="text" id="nome" class="form-control" [(ngModel)]="modalData.nome" name="nome" required />
     </div>
 
-    <!-- Marca -->a
+    <!-- Marca -->
     <div class="form-group">
       <label for="marca">Marca</label>
       <input type="text" id="marca" class="form-control" [(ngModel)]="modalData.marca" name="marca" required />
@@ -34,7 +34,7 @@
     <!-- Quantidade -->
     <div class="form-group">
       <label for="quantidade">Quantidade</label>
-      <input type="number" id="quantidade" class="form-control" [(ngModel)]="modalData.quantidade" name="quantidade" required />
+      <input type="number" id="quantidade" class="form-control" [(ngModel)]="modalData.quantidade" name="quantidade" min="0" required />
     </div>
 
     <!-- Unidade -->

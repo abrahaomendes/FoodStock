@@ -92,3 +92,15 @@ body {
   margin-left: 1rem;
   text-transform: lowercase;
 }
+@media (max-width: 768px){
+  .login-panel{
+    display: none;
+  }
+  .signup-panel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

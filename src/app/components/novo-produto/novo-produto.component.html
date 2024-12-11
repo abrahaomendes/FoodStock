@@ -14,7 +14,7 @@
 
       <div class="form-group">
         <label>Preço</label>
-        <input type="text" [(ngModel)]="produto.preco" name="preco" mask="separator.2"  separatorLimit="1000"/>
+        <input type="text" [(ngModel)]="produto.preco"  name="preco" prefix="R$ "mask="separator.2" decimalMarker="," separatorLimit="1000"/>
       </div>
       <div class="form-group">
         <label>Validade</label>

@@ -36,7 +36,7 @@
         </td>
         <td>{{ item.quantidade }}</td>
         <td>{{ item.unidade }}</td>
-        <td>{{ item.preco }}</td>
+        <td>R$ {{ item.preco }}</td>
         <td>{{ item.marca }}</td>
         <td [ngClass]="item.validade ? isExpired(item.validade) : ''">
           {{ item.validade | date: 'dd/MM/yyyy' }}

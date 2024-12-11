@@ -72,5 +72,15 @@ button {
 button:hover {
   background-color: #276B46;
 }
+@media (max-width: 828px){
+  .form-group{
+    width: 100%;
+  }
+  .form-row{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
 
 

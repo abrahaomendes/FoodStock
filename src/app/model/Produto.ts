@@ -4,7 +4,7 @@ export class Produto{
   id:number=0;
   nome: string='';
   marca: string='';
-  preco?:number;
+  preco?:string;
   categories: Categoria[] = [];
   quantidade?: number;
   unidade:string='';

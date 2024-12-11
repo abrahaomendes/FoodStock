@@ -18,7 +18,7 @@ export class RecuperarComponent {
   email:string='';
 
   enviar(form:NgForm){
-    if(form.valid)
+    if(form.valid){
     this.#service.recuperar(this.email).subscribe({
       next:()=>{
         this.#toastr.success('Link enviado ao email!')
@@ -26,6 +26,9 @@ export class RecuperarComponent {
       },
       error: (err)=> this.#toastr.error(err)
     })
+  }else{
+    this.#toastr.info('Campos inválidos!')
   }
+}
 
 }

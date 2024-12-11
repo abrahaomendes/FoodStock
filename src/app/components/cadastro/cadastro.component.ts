@@ -20,13 +20,16 @@ export class CadastroComponent {
 
 
   cadastrar(form:NgForm){
-    console.log(this.usuario)
+    if(form.valid){
     this.#auth.cadastro(this.usuario).subscribe({
       next:(next)=>{
         this.#toastr.success('Cadastro Realizado com Sucesso!');
         form.resetForm();
-      }
+      },error:(err)=>this.#toastr.error(err.error)
     })
+  }else{
+    this.#toastr.info('Campos inválidos!')
+  }
   }
 
 }

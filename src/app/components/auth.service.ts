@@ -4,6 +4,7 @@ import { inject, Injectable } from '@angular/core';
 import { Usuario } from '../model/Usuario';
 import { Observable } from 'rxjs';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 export class AuthService {
 
   #http = inject(HttpClient);
-  url = 'http://localhost:8080/auth';
+  url = `${environment.apiUrl}/auth`
 
   public cadastro(usuario: Usuario): Observable<any> {
     return this.#http.post<any>(`${this.url}/register`, usuario);
@@ -36,7 +37,7 @@ export class AuthService {
 
   storeToken(token: string, user: any): void {
     localStorage.setItem('token', token);
-    localStorage.setItem('currentUser', JSON.stringify(user));  
+    localStorage.setItem('currentUser', JSON.stringify(user));
   }
 
 
@@ -52,5 +53,10 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('currentUser');
+  }
+
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token;
   }
 }

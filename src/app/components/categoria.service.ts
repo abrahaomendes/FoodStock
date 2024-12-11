@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Categoria } from '../model/Categoria';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CategoriaService {
   constructor() { }
 
   #http = inject(HttpClient);
-  #url = signal('http://localhost:8080/categoria')
+  #url = signal(`${environment.apiUrl}/categoria`)
 
 
   public getCategorias$(): Observable<any> {

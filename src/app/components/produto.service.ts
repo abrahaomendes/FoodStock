@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { Produto } from '../model/Produto';
 import { Observable, shareReplay, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ProdutoService {
   constructor() { }
 
   #http = inject(HttpClient);
-  #url = signal("http://localhost:8080/produtos")
+  #url = signal(`${environment.apiUrl}/produtos`)
 
 
   #setCreate = signal<any>(null);

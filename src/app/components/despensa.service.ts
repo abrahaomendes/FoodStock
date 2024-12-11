@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { Observable, shareReplay,map } from 'rxjs';
 import { Produto } from '../model/Produto';
+import { environment } from '../../environments/environment';
 
 
 
@@ -11,7 +12,8 @@ import { Produto } from '../model/Produto';
 export class DespensaService {
 
   #http = inject(HttpClient);
-  #url = signal('http://localhost:8080/produtos')
+  #url = signal(`${environment.apiUrl}/produtos`)
+
 
   public getList$(): Observable<Produto[]>{
     const token = localStorage.getItem('token');
